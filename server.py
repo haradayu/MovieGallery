@@ -40,15 +40,5 @@ def index():
     output, flag = tree("static/workspace", 0)
     return render_template('index.html', tree ="<ul>\n%s\n</ul>" %output)
 
-@app.route('/player.html')
-def player():
-    return render_template('player.html')
-
-@app.route("/menu.html")
-def menu():
-    output, flag = tree("..", 0)
-    # print output
-    return render_template("tree.html", tree ="<ul>\n%s\n</ul>" %output)
-
 if __name__ == "__main__":
     app.run(port = 3000,host='0.0.0.0')
